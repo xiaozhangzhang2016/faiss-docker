@@ -9,6 +9,7 @@ RUN apt-get update && \
     curl https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh > /tmp/conda.sh && \
     bash /tmp/conda.sh -b -p /opt/conda && \
     /opt/conda/bin/conda update -n base conda && \
+    /opt/conda/bin/conda install -y python=3.6.9 && \
     /opt/conda/bin/conda install -y -c pytorch faiss-${FAISS_CPU_OR_GPU}=${FAISS_VERSION} && \
     apt-get remove -y --auto-remove curl bzip2 && \
     apt-get clean && \
